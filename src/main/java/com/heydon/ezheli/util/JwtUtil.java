@@ -1,0 +1,40 @@
+package com.heydon.ezheli.util;
+
+import com.auth0.jwt.JWT;
+import com.auth0.jwt.algorithms.Algorithm;
+
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+
+public class JwtUtil {
+
+    /**
+     * 过期时间15分钟
+     */
+    private static final long EXPIRE_TIME = 15 * 60 * 1000;
+
+    /**
+     * token私钥
+     */
+    private static final String TOKEN_SECRET = "0c3875464ef041228063e49ba741c0b1";
+
+    public static String createToken(String username) {
+
+        //过期时间
+        Date date = new Date(System.currentTimeMillis() + EXPIRE_TIME);
+        //私钥及加密算法
+        Algorithm algorithm = Algorithm.HMAC256(TOKEN_SECRET);
+        //设置头部信息
+        Map<String, Object> header = new HashMap<>(2);
+        header.put("typ", "JWT");
+        header.put("alg", "HS256");
+        //附带username生成签名
+        return JWT.create()
+                .withHeader(header)
+                .withClaim("username", username)
+                .withExpiresAt(date)
+                .sign(algorithm);
+    }
+
+}
