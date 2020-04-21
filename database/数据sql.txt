@@ -1,0 +1,50 @@
+use ezheli;
+
+insert into tbl_college
+values (1, '信息学院'),
+       (2, '服装学院'),
+       (3, '理学院');
+
+insert into tbl_major
+values (1, 11, '计算机科学与技术'),
+       (1, 12, '通信工程'),
+       (2, 21, '服装设计'),
+       (2, 22, '服装表演');
+
+insert into tbl_class
+values (1, 11, 111, '计算机科学与技术16（1）班', 2016),
+       (1, 11, 112, '计算机科学与技术16（2）班', 2016),
+       (1, 11, 113, '计算机科学与技术16（3）班', 2016);
+
+insert into tbl_student
+values (2016329600163, 123456, '杨海东', '男', 1, 11, 113),
+       (2016329600164, 123456, '尤良辉', '男', 1, 11, 113);
+
+insert into tbl_teacher
+values (10001, 1, 123456, '吴云枭', '女');
+
+insert into tbl_award_big_type
+values (1, '奖学金'),
+       (2, '荣誉称号');
+
+insert into tbl_award_small_type
+values (1, 11, '国家奖学金'),
+       (1, 12, '省政府奖学金'),
+       (2, 21, '三好学生'),
+       (2, 22, '优秀学生干部');
+
+insert into tbl_award_state
+values (1, '准备'),
+       (2, '申请'),
+       (3, '审核'),
+       (4, '结束');
+
+insert into check_result
+values (1, '通过'),
+       (2, '不通过');
+
+insert into tbl_award(award_id, award_big_type_id, award_small_type_id, college_id, award_total_name,
+                      start_time, end_apply_time, introduce, limit_number, teac_id, award_state_id)
+values (1001, 1, 11, 1, '2019-2020国家奖学金', '2020-04-21 01:20:00', '2020-08-21 01:20:00', '这是国家奖学金介绍', 3, 10001, 2),
+       (1002, 1, 12, 1, '2019-2020省政府奖学金', '2020-04-21 01:20:00', '2020-08-21 01:20:00', '这是省政府奖学金介绍', 3, 10001, 2),
+       (1003, 2, 21, 1, '2019-2020三好学生', '2020-04-21 01:20:00', '2020-08-21 01:20:00', '这是国家奖学金介绍', 3, 10001, 1);

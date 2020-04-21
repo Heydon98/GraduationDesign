@@ -6,20 +6,19 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 import lombok.experimental.Accessors;
 
+
 @Data
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-public class Student {
+public class ApplyingAwards {
 
-    private String stuId;
-    private String password;
-    private String name;
-    private String sex;
-    private int collegeId;
-    private int gradeId;
-    private int majorId;
-    private int classId;
-
+    private int awardId;
+    private String awardName;
+    private String introduce;
+    private int limitNum;
+    private String endApplyTime;
+    private long isApplied;
+    private String type;
 }

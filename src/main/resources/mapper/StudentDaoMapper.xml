@@ -5,8 +5,60 @@
 
 <mapper namespace="com.heydon.ezheli.dao.StudentDao">
 
-    <select id="findByStuIdAndPassword" resultType="hashmap">
-        select stu_id from tbl_student where stu_id=#{stuId} and password=#{password}
+    <select id="findUserByStuIdAndPassword" resultType="hashmap">
+        select stu_id, college_id from tbl_student where stu_id=#{stuId} and password=#{password}
+    </select>
+
+    <select id="findOpenAwardByStuIdAndCollegeId" resultType="hashmap">
+        select
+            a.award_id as awardId,
+            a.award_total_name as awardName,
+            a.introduce as introduce,
+            a.limit_number as limitNum,
+            a.end_apply_time as endApplyTime,
+            b.stu_id as isApplied,
+            c.award_big_type_name as type
+        from
+         (   tbl_award as a
+        left join
+            tbl_stu_award as b
+        on
+            a.award_id = b.award_id
+             )
+        left join
+            tbl_award_big_type as c
+        on
+            a.award_big_type_id = c.award_big_type_id
+        where
+            a.college_id = #{collegeId}
+        and
+            b.stu_id = #{stuId}
+    </select>
+
+    <select id="findOpenAwardByStuIdAndCollegeId1" resultType="ApplyingAwards">
+        select
+            a.award_id as awardId,
+            a.award_total_name as awardName,
+            a.introduce as introduce,
+            a.limit_number as limitNum,
+            a.end_apply_time as endApplyTime,
+            b.stu_id as isApplied,
+            c.award_big_type_name as type
+        from
+         (   tbl_award as a
+        left join
+            tbl_stu_award as b
+        on
+            a.award_id = b.award_id
+             )
+        left join
+            tbl_award_big_type as c
+        on
+            a.award_big_type_id = c.award_big_type_id
+        where
+            a.college_id = #{collegeId}
+        and
+            a.end_apply_time &gt; #{endApplyTime}
     </select>
 
 </mapper>
