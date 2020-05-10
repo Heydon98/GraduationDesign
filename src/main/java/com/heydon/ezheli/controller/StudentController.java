@@ -46,12 +46,18 @@ public class StudentController {
      * @return
      */
     @RequestMapping(value = "applyAward", method = RequestMethod.POST)
-    public ResultUtil applyAward(HttpServletRequest request) {
+    public ResultUtil applyAward(HttpServletRequest request, @RequestParam Map<String, String> map) {
+        System.out.println("applyAwardController");
+        System.out.println(map);
         String token = request.getHeader("token");
-        return studentService.applyAwards(token);
+        return studentService.applyAwards(token, map);
     }
 
-
+    @RequestMapping(value = "applyingAwards", method = RequestMethod.GET)
+    public ResultUtil applyingAwards(HttpServletRequest request) {
+        String token = request.getHeader("token");
+        return studentService.applyingAwards(token);
+    }
 
 
 }

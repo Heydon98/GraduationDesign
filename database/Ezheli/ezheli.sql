@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     2020/4/21 15:51:41                           */
+/* Created on:     2020/5/8 13:43:34                            */
 /*==============================================================*/
 
 
@@ -87,11 +87,11 @@ create table tbl_award
    college_id           int not null,
    award_total_name     varchar(100) not null,
    start_time           datetime not null,
-   end_apply_time       datetime not null,
    end_time             datetime,
    introduce            varchar(200) not null,
    limit_number         int not null,
    teac_id              bigint not null,
+   teac_name            varchar(50),
    award_state_id       int
 );
 
@@ -180,12 +180,15 @@ alter table tbl_major
 /*==============================================================*/
 create table tbl_stu_award
 (
-   stu_award_id         int not null,
+   stu_award_id         int not null auto_increment,
    stu_id               bigint,
+   stu_name             varchar(50),
    award_id             int,
+   award_total_name     varchar(100),
    reason               varchar(200),
    check_result_id      int,
    teac_id              bigint,
+   teac_name            varchar(50),
    apply_time           datetime,
    check_time           datetime
 );
@@ -200,6 +203,7 @@ create table tbl_stu_course
 (
    stu_id               bigint not null,
    course_id            int not null,
+   course_name          varchar(100),
    course_year          char(9) not null,
    course_term          int not null,
    course_teacher       varchar(50) not null,

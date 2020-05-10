@@ -6,59 +6,44 @@
 <mapper namespace="com.heydon.ezheli.dao.StudentDao">
 
     <select id="findUserByStuIdAndPassword" resultType="hashmap">
-        select stu_id, college_id from tbl_student where stu_id=#{stuId} and password=#{password}
+        select stu_id, college_id, name from tbl_student where stu_id=#{stuId} and password=#{password}
     </select>
 
-    <select id="findOpenAwardByStuIdAndCollegeId" resultType="hashmap">
-        select
-            a.award_id as awardId,
-            a.award_total_name as awardName,
-            a.introduce as introduce,
-            a.limit_number as limitNum,
-            a.end_apply_time as endApplyTime,
-            b.stu_id as isApplied,
-            c.award_big_type_name as type
-        from
-         (   tbl_award as a
-        left join
-            tbl_stu_award as b
-        on
-            a.award_id = b.award_id
-             )
-        left join
-            tbl_award_big_type as c
-        on
-            a.award_big_type_id = c.award_big_type_id
-        where
-            a.college_id = #{collegeId}
-        and
-            b.stu_id = #{stuId}
+    <select id="findOpenAwardByStuIdAndCollegeId" resultType="OpenAwards">
+        select a.*,
+               if(a.awardId in (
+                   select b.award_id
+                   from tbl_stu_award as b
+                   where b.stu_id = #{stuId}
+               ), 1, 0) as isApplied
+        from view_open_awards as a
+        where a.awardStateId = 2
     </select>
 
-    <select id="findOpenAwardByStuIdAndCollegeId1" resultType="ApplyingAwards">
-        select
-            a.award_id as awardId,
-            a.award_total_name as awardName,
-            a.introduce as introduce,
-            a.limit_number as limitNum,
-            a.end_apply_time as endApplyTime,
-            b.stu_id as isApplied,
-            c.award_big_type_name as type
-        from
-         (   tbl_award as a
-        left join
-            tbl_stu_award as b
-        on
-            a.award_id = b.award_id
-             )
-        left join
-            tbl_award_big_type as c
-        on
-            a.award_big_type_id = c.award_big_type_id
-        where
-            a.college_id = #{collegeId}
-        and
-            a.end_apply_time &gt; #{endApplyTime}
+    <select id="findOpenAwardByStuIdAndCollegeId1" resultType="OpenAwards">
+
+    </select>
+    
+    <insert id="addApplyAward">
+        insert into
+            tbl_stu_award(stu_id, stu_name, award_id, award_total_name, reason, apply_time)
+        values (#{stuId}, #{realName}, #{awardId}, #{awardName}, #{reason}, #{applyTime})
+    </insert>
+
+    <select id="findApplyingAwardsByStuId" resultType="ApplyingAwards">
+        select a.stu_id as stuId,
+               a.stu_name as stuName,
+               a.award_total_name as awardName,
+               a.apply_time as applyTime,
+               a.teac_name as teacTime,
+               a.reason as reason,
+               b.check_result_name as checkResult,
+               a.check_time as checkTime
+        from tbl_stu_award as a
+        left join check_result as b
+        on a.check_result_id = b.check_result_id
+        where a.stu_id = #{stuId}
+        order by a.apply_time desc
     </select>
 
 </mapper>

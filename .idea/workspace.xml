@@ -1,28 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fdb3d26b-3e2a-4874-9985-4bde542ba3f9" name="Default Changelist" comment="加入数据库文件">
-      <change afterPath="$PROJECT_DIR$/database/Ezheli/Ezheli.pjb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/Ezheli/Ezheli.prj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/Ezheli/EzheliModel.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/Ezheli/EzheliModel.pdm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/Ezheli/ezheli.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/数据sql.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/heydon/ezheli/config/WebConfigurer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/heydon/ezheli/config/interceptors/TokenInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/heydon/ezheli/entity/ApplyingAwards.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/heydon/ezheli/util/ResultUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="fdb3d26b-3e2a-4874-9985-4bde542ba3f9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/heydon/ezheli/controller/TeacherController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/heydon/ezheli/dao/TeacherDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/heydon/ezheli/entity/OpenAwards.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/heydon/ezheli/service/TeacherImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/heydon/ezheli/service/TeacherService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/TeacherDaoMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/Ezheli/EzheliModel.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/database/Ezheli/EzheliModel.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/Ezheli/EzheliModel.pdm" beforeDir="false" afterPath="$PROJECT_DIR$/database/Ezheli/EzheliModel.pdm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/Ezheli/ezheli.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/Ezheli/ezheli.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/数据sql.txt" beforeDir="false" afterPath="$PROJECT_DIR$/database/数据sql.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/heydon/ezheli/controller/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heydon/ezheli/controller/StudentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/heydon/ezheli/dao/StudentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heydon/ezheli/dao/StudentDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heydon/ezheli/entity/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heydon/ezheli/entity/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heydon/ezheli/entity/ApplyingAwards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heydon/ezheli/entity/ApplyingAwards.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/heydon/ezheli/service/StudentImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heydon/ezheli/service/StudentImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/heydon/ezheli/service/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heydon/ezheli/service/StudentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heydon/ezheli/util/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heydon/ezheli/util/JwtUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/StudentDaoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/StudentDaoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/heydon/ezheli/util/JwtUtilTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,10 +36,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Mapper" />
-        <option value="Interface" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="Mapper" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -70,7 +68,9 @@
     <option name="vmOptions" value="-DarchetypeCatalog=internal" />
   </component>
   <component name="ProjectId" id="1ZhmT7XhCXtM5QROZ08a9GUBHCH" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -86,8 +86,8 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/database" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -173,7 +173,14 @@
       <workItem from="1585736323400" duration="6967000" />
       <workItem from="1586224966749" duration="10382000" />
       <workItem from="1587205252612" duration="586000" />
-      <workItem from="1587287393803" duration="10631000" />
+      <workItem from="1587287393803" duration="11344000" />
+      <workItem from="1587646788709" duration="387000" />
+      <workItem from="1587715429159" duration="7828000" />
+      <workItem from="1588380978108" duration="1388000" />
+      <workItem from="1588385352868" duration="5562000" />
+      <workItem from="1588556466976" duration="7973000" />
+      <workItem from="1588904332754" duration="11559000" />
+      <workItem from="1588987293131" duration="10373000" />
     </task>
     <task id="LOCAL-00001" summary="第一次提交，登录接口完成">
       <created>1585534402925</created>
@@ -196,7 +203,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585535782157</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="加入数据库文件">
+      <created>1587456324146</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1587456324146</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,26 +238,26 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1585382646674" />
-    <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser" timestamp="1585740126805">
+    <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser" timestamp="1589005191223">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1585740126805" />
+    <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1589005191223" />
     <state x="423" y="337" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1585302260746">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="423" y="337" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1585302260746" />
-    <state x="426" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1585561658761">
+    <state x="348" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1588922801122">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="426" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1585561658761" />
-    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585376390269">
+    <state x="348" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1588922801122" />
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1589006545024">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1585376390269" />
-    <state x="372" y="6" key="CommitChangelistDialog2" timestamp="1587456299935">
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1589006545024" />
+    <state x="372" y="6" key="CommitChangelistDialog2" timestamp="1587456321958">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="372" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1587456299935" />
+    <state x="372" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1587456321958" />
     <state x="549" y="146" key="FileChooserDialogImpl" timestamp="1586403917962">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -252,45 +266,57 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="632" y="303" width="272" height="290" key="Github.ShareDialog/0.0.1536.824@0.0.1536.824" timestamp="1585533806052" />
-    <state width="1493" height="203" key="GridCell.Tab.0.bottom" timestamp="1587439497993">
+    <state width="1493" height="140" key="GridCell.Tab.0.bottom" timestamp="1589079370973">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="203" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587439497993" />
-    <state width="1493" height="203" key="GridCell.Tab.0.center" timestamp="1587439497992">
+    <state width="1493" height="140" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589079370973" />
+    <state width="1493" height="140" key="GridCell.Tab.0.center" timestamp="1589079370972">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="203" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587439497992" />
-    <state width="1493" height="203" key="GridCell.Tab.0.left" timestamp="1587439497992">
+    <state width="1493" height="140" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1589079370972" />
+    <state width="1493" height="140" key="GridCell.Tab.0.left" timestamp="1589079370972">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="203" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587439497992" />
-    <state width="1493" height="203" key="GridCell.Tab.0.right" timestamp="1587439497993">
+    <state width="1493" height="140" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1589079370972" />
+    <state width="1493" height="140" key="GridCell.Tab.0.right" timestamp="1589079370972">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="203" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587439497993" />
-    <state width="1493" height="203" key="GridCell.Tab.1.bottom" timestamp="1587439497993">
+    <state width="1493" height="140" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589079370972" />
+    <state width="1493" height="140" key="GridCell.Tab.1.bottom" timestamp="1589079370973">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="203" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587439497993" />
-    <state width="1493" height="203" key="GridCell.Tab.1.center" timestamp="1587439497993">
+    <state width="1493" height="140" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589079370973" />
+    <state width="1493" height="140" key="GridCell.Tab.1.center" timestamp="1589079370973">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="203" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1587439497993" />
-    <state width="1493" height="203" key="GridCell.Tab.1.left" timestamp="1587439497993">
+    <state width="1493" height="140" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1589079370973" />
+    <state width="1493" height="140" key="GridCell.Tab.1.left" timestamp="1589079370973">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="203" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1587439497993" />
-    <state width="1493" height="203" key="GridCell.Tab.1.right" timestamp="1587439497993">
+    <state width="1493" height="140" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1589079370973" />
+    <state width="1493" height="140" key="GridCell.Tab.1.right" timestamp="1589079370973">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="203" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1587439497993" />
-    <state x="270" y="54" key="SettingsEditor" timestamp="1585535720591">
+    <state width="1493" height="140" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1589079370973" />
+    <state x="349" y="74" key="Registry" timestamp="1588381486768">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="270" y="54" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1585535720591" />
-    <state x="178" y="107" key="new project wizard" timestamp="1585382192062">
+    <state x="349" y="74" key="Registry/0.0.1536.824@0.0.1536.824" timestamp="1588381486768" />
+    <state x="270" y="54" key="SettingsEditor" timestamp="1588381398797">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="178" y="107" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1585382192062" />
+    <state x="270" y="54" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1588381398797" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1587456393869">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1587456393869" />
+    <state x="178" y="107" key="new project wizard" timestamp="1587887326546">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="178" y="107" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1587887326546" />
+    <state x="511" y="40" key="refactoring.ChangeSignatureDialog" timestamp="1587647080460">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="511" y="40" key="refactoring.ChangeSignatureDialog/0.0.1536.824@0.0.1536.824" timestamp="1587647080460" />
   </component>
 </project>

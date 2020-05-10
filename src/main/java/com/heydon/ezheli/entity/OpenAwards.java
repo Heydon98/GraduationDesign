@@ -6,20 +6,19 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 import lombok.experimental.Accessors;
 
-import java.util.Date;
 
 @Data
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-public class ApplyingAwards {
-    private long stuId;
-    private String stuName;
-    private String awardName;
-    private String teacName;
-    private String reason;
-    private String checkResult;
-    private Date checkName;
+public class OpenAwards {
 
+    private int awardId;
+    private String awardName;
+    private String introduce;
+    private int limitNum;
+    private String teacName;
+    private long isApplied;
+    private String type;
 }

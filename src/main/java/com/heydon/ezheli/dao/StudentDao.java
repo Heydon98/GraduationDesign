@@ -1,6 +1,7 @@
 package com.heydon.ezheli.dao;
 
 import com.heydon.ezheli.entity.ApplyingAwards;
+import com.heydon.ezheli.entity.OpenAwards;
 import com.heydon.ezheli.entity.Student;
 import org.apache.ibatis.annotations.Param;
 
@@ -12,10 +13,21 @@ public interface StudentDao {
 
     String addStudent(Student student);
 
-    Map<String, Object> findUserByStuIdAndPassword(@Param("stuId") String stuId, @Param("password") String password);
-    List<Map<String, Object>> findOpenAwardByStuIdAndCollegeId(@Param("stuId") String stuId,
-                                                               @Param("collegeId") int collegeId);
-    List<ApplyingAwards> findOpenAwardByStuIdAndCollegeId1(@Param("collegeId") int collegeId, @Param("endApplyTime") String endApplyTime);
+    Map<String, Object> findUserByStuIdAndPassword(@Param("stuId") String stuId,
+                                                   @Param("password") String password);
 
+    List<OpenAwards> findOpenAwardByStuIdAndCollegeId(@Param("stuId") String stuId,
+                                                      @Param("collegeId") int collegeId);
 
+    List<OpenAwards> findOpenAwardByStuIdAndCollegeId1(@Param("collegeId") int collegeId, @Param("endApplyTime") String endApplyTime);
+
+    void addApplyAward(@Param("stuId") String stuId,
+                       @Param("realName") String realName,
+                       @Param("awardId") String awardId,
+                       @Param("awardName") String awardName,
+                       @Param("reason") String reason,
+                       @Param("applyTime") String applyTime);
+
+    List<ApplyingAwards> findApplyingAwardsByStuId(@Param("stuId") String stuId);
+    
 }

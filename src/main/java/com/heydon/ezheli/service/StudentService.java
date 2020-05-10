@@ -9,5 +9,7 @@ public interface StudentService {
 
     ResultUtil showAwards(String token);
 
-    ResultUtil applyAwards(String token);
+    ResultUtil applyAwards(String token, Map<String, String> map);
+
+    ResultUtil applyingAwards(String token);
 }
