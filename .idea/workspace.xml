@@ -2,25 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fdb3d26b-3e2a-4874-9985-4bde542ba3f9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/heydon/ezheli/controller/TeacherController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/heydon/ezheli/dao/TeacherDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/heydon/ezheli/entity/OpenAwards.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/heydon/ezheli/service/TeacherImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/heydon/ezheli/service/TeacherService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/TeacherDaoMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/Ezheli/EzheliModel.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/database/Ezheli/EzheliModel.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/Ezheli/EzheliModel.pdm" beforeDir="false" afterPath="$PROJECT_DIR$/database/Ezheli/EzheliModel.pdm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/Ezheli/ezheli.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/Ezheli/ezheli.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/数据sql.txt" beforeDir="false" afterPath="$PROJECT_DIR$/database/数据sql.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heydon/ezheli/controller/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heydon/ezheli/controller/StudentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heydon/ezheli/dao/StudentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heydon/ezheli/dao/StudentDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heydon/ezheli/entity/ApplyingAwards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heydon/ezheli/entity/ApplyingAwards.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heydon/ezheli/service/StudentImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heydon/ezheli/service/StudentImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/heydon/ezheli/service/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heydon/ezheli/service/StudentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/StudentDaoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/StudentDaoMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/heydon/ezheli/service/TeacherImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/heydon/ezheli/service/TeacherImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/TeacherDaoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/TeacherDaoMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +71,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -180,7 +164,7 @@
       <workItem from="1588385352868" duration="5562000" />
       <workItem from="1588556466976" duration="7973000" />
       <workItem from="1588904332754" duration="11559000" />
-      <workItem from="1588987293131" duration="10373000" />
+      <workItem from="1588987293131" duration="15565000" />
     </task>
     <task id="LOCAL-00001" summary="第一次提交，登录接口完成">
       <created>1585534402925</created>
@@ -210,7 +194,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587456324146</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="初步加入Teacher">
+      <created>1589080707523</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1589080707523</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -219,7 +210,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="第一次提交，登录接口完成" />
     <MESSAGE value="加入数据库文件" />
-    <option name="LAST_COMMIT_MESSAGE" value="加入数据库文件" />
+    <MESSAGE value="初步加入Teacher" />
+    <option name="LAST_COMMIT_MESSAGE" value="初步加入Teacher" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="71" key="#Inspections" timestamp="1585379617370">
@@ -254,10 +246,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1589006545024" />
-    <state x="372" y="6" key="CommitChangelistDialog2" timestamp="1587456321958">
+    <state x="372" y="6" key="CommitChangelistDialog2" timestamp="1589080705017">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="372" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1587456321958" />
+    <state x="372" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1589080705017" />
     <state x="549" y="146" key="FileChooserDialogImpl" timestamp="1586403917962">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -266,50 +258,50 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="632" y="303" width="272" height="290" key="Github.ShareDialog/0.0.1536.824@0.0.1536.824" timestamp="1585533806052" />
-    <state width="1493" height="140" key="GridCell.Tab.0.bottom" timestamp="1589079370973">
+    <state width="1493" height="140" key="GridCell.Tab.0.bottom" timestamp="1589158400696">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="140" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589079370973" />
-    <state width="1493" height="140" key="GridCell.Tab.0.center" timestamp="1589079370972">
+    <state width="1493" height="140" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589158400696" />
+    <state width="1493" height="140" key="GridCell.Tab.0.center" timestamp="1589158400696">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="140" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1589079370972" />
-    <state width="1493" height="140" key="GridCell.Tab.0.left" timestamp="1589079370972">
+    <state width="1493" height="140" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1589158400696" />
+    <state width="1493" height="140" key="GridCell.Tab.0.left" timestamp="1589158400696">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="140" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1589079370972" />
-    <state width="1493" height="140" key="GridCell.Tab.0.right" timestamp="1589079370972">
+    <state width="1493" height="140" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1589158400696" />
+    <state width="1493" height="140" key="GridCell.Tab.0.right" timestamp="1589158400696">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="140" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589079370972" />
-    <state width="1493" height="140" key="GridCell.Tab.1.bottom" timestamp="1589079370973">
+    <state width="1493" height="140" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589158400696" />
+    <state width="1493" height="140" key="GridCell.Tab.1.bottom" timestamp="1589158400697">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="140" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589079370973" />
-    <state width="1493" height="140" key="GridCell.Tab.1.center" timestamp="1589079370973">
+    <state width="1493" height="140" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589158400697" />
+    <state width="1493" height="140" key="GridCell.Tab.1.center" timestamp="1589158400696">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="140" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1589079370973" />
-    <state width="1493" height="140" key="GridCell.Tab.1.left" timestamp="1589079370973">
+    <state width="1493" height="140" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1589158400696" />
+    <state width="1493" height="140" key="GridCell.Tab.1.left" timestamp="1589158400696">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="140" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1589079370973" />
-    <state width="1493" height="140" key="GridCell.Tab.1.right" timestamp="1589079370973">
+    <state width="1493" height="140" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1589158400696" />
+    <state width="1493" height="140" key="GridCell.Tab.1.right" timestamp="1589158400697">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="140" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1589079370973" />
+    <state width="1493" height="140" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1589158400697" />
     <state x="349" y="74" key="Registry" timestamp="1588381486768">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="349" y="74" key="Registry/0.0.1536.824@0.0.1536.824" timestamp="1588381486768" />
-    <state x="270" y="54" key="SettingsEditor" timestamp="1588381398797">
+    <state x="270" y="54" key="SettingsEditor" timestamp="1589107622469">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="270" y="54" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1588381398797" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1587456393869">
+    <state x="270" y="54" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1589107622469" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1589080852537">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1587456393869" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1589080852537" />
     <state x="178" y="107" key="new project wizard" timestamp="1587887326546">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

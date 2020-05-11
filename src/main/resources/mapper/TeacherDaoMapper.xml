@@ -5,4 +5,8 @@
 
 <mapper namespace="com.heydon.ezheli.dao.TeacherDao">
 
+    <select id="findTeacByTeacIdAndPassword" resultType="hashmap">
+        select teac_id, college_id, name from tbl_teacher where teac_id = #{teacId} and password = #{password}
+    </select>
+
 </mapper>
