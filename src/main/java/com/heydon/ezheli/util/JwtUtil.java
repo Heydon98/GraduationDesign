@@ -30,7 +30,7 @@ public class JwtUtil {
      * @param username
      * @return 加密的token
      */
-    public static String createToken(String username, int collegeId) {
+    public static String createToken(String username, int collegeId, String realName) {
 
         //过期时间
         Date date = new Date(System.currentTimeMillis() + EXPIRE_TIME);
@@ -45,6 +45,7 @@ public class JwtUtil {
                 .withHeader(header)
                 .withClaim("username", username)
                 .withClaim("collegeId", collegeId)
+                .withClaim("realName", realName)
                 .withExpiresAt(date)
                 .sign(algorithm);
     }
@@ -90,6 +91,15 @@ public class JwtUtil {
             return jwt.getClaim("collegeId").asInt();
         } catch (JWTDecodeException e){
             return -1;
+        }
+    }
+
+    public static String getRealName(String token) {
+        try {
+            DecodedJWT jwt = JWT.decode(token);
+            return jwt.getClaim("realName").asString();
+        } catch (JWTDecodeException e){
+            return null;
         }
     }
 }

@@ -11,13 +11,13 @@ import lombok.experimental.Accessors;
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-public class ApplyingAwards {
-    private long stuId;
-    private String stuName;
+public class Award {
+    private int awardId;
+    private String awardType;
     private String awardName;
-    private String teacName;
-    private String reason;
-    private String checkResult;
-    private String checkName;
-
+    private String startTime;
+    private String introduce;
+    private int limitNum;
+    private int stateId;
+    private String awardState;
 }

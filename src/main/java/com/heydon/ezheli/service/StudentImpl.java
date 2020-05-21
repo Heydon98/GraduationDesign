@@ -39,7 +39,7 @@ public class StudentImpl implements StudentService {
             int collegeId = (int) result.get("college_id");
             long stuId = (long) result.get("stu_id");
             String realName = (String)result.get("name");
-            String token = JwtUtil.createToken(username, collegeId);
+            String token = JwtUtil.createToken(username, collegeId, realName);
             Map<String, Object> data = new HashMap<>();
             data.put("username", stuId);
             data.put("collegeId", collegeId);

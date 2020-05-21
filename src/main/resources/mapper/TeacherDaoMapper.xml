@@ -9,4 +9,50 @@
         select teac_id, college_id, name from tbl_teacher where teac_id = #{teacId} and password = #{password}
     </select>
 
+    <select id="findAwardByTeacId" resultType="Award">
+        SELECT a.award_id,
+               b.award_big_type_name as awardType,
+               a.award_total_name as awardName,
+               a.start_time as startTime,
+               a.end_time,
+               a.introduce,
+               a.limit_number as limitNum,
+               c.award_state_name as awardState
+        FROM tbl_award as a,
+             tbl_award_big_type as b,
+             tbl_award_state as c
+        where a.award_big_type_id = b.award_big_type_id
+          and a.award_state_id = c.award_state_id
+          and a.teac_id = #{teacId}
+        order by a.start_time desc
+    </select>
+
+    <select id="getMaxAwardId" resultType="int">
+        SELECT award_id
+        FROM tbl_award
+        ORDER by award_id desc
+        limit 1
+    </select>
+
+    <insert id="addNewAward">
+        insert into
+            tbl_award(award_id, award_big_type_id, award_small_type_id, college_id, award_total_name, start_time, introduce, limit_number, teac_id, teac_name, award_state_id)
+        values (#{awardId}, #{bigType}, #{smallType}, #{collegeId}, #{awardName}, #{createTime}, #{introduce}, #{limitNum}, #{teacId}, #{realName}, #{stateId})
+    </insert>
+
+    <update id="changeAwardState">
+        update
+            tbl_award
+        set award_state_id = #{stateId}
+        where award_id = #{awardId}
+    </update>
+
+    <delete id="deleteAward">
+        delete from tbl_award where award_id = #{awardId};
+    </delete>
+
+    <delete id="deleteStuAward">
+        delete from tbl_stu_award where award_id = #{awardId};
+    </delete>
+
 </mapper>
