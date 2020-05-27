@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     2020/5/8 13:43:34                            */
+/* Created on:     2020/5/26 0:14:42                            */
 /*==============================================================*/
 
 
@@ -49,15 +49,12 @@ alter table tbl_stu_award
 
 drop table if exists tbl_stu_award;
 
-alter table tbl_stu_course
-   drop primary key;
-
-drop table if exists tbl_stu_course;
-
 alter table tbl_student
    drop primary key;
 
 drop table if exists tbl_student;
+
+drop table if exists tbl_teac_award;
 
 alter table tbl_teacher
    drop primary key;
@@ -82,8 +79,8 @@ alter table check_result
 create table tbl_award
 (
    award_id             int not null,
-   award_big_type_id    int not null,
    award_small_type_id  int not null,
+   award_big_type_id    int not null,
    college_id           int not null,
    award_total_name     varchar(100) not null,
    start_time           datetime not null,
@@ -197,29 +194,6 @@ alter table tbl_stu_award
    add primary key (stu_award_id);
 
 /*==============================================================*/
-/* Table: tbl_stu_course                                        */
-/*==============================================================*/
-create table tbl_stu_course
-(
-   stu_id               bigint not null,
-   course_id            int not null,
-   course_name          varchar(100),
-   course_year          char(9) not null,
-   course_term          int not null,
-   course_teacher       varchar(50) not null,
-   course_location      varchar(100) not null,
-   start_week           int not null,
-   end_week             int not null,
-   start_order          int not null,
-   end_order            int not null,
-   score                float,
-   gpa                  float
-);
-
-alter table tbl_stu_course
-   add primary key (stu_id, course_id, course_year, course_term);
-
-/*==============================================================*/
 /* Table: tbl_student                                           */
 /*==============================================================*/
 create table tbl_student
@@ -235,6 +209,16 @@ create table tbl_student
 
 alter table tbl_student
    add primary key (stu_id);
+
+/*==============================================================*/
+/* Table: tbl_teac_award                                        */
+/*==============================================================*/
+create table tbl_teac_award
+(
+   teac_id              bigint,
+   name                 varchar(50),
+   award_id             int
+);
 
 /*==============================================================*/
 /* Table: tbl_teacher                                           */
@@ -281,11 +265,14 @@ alter table tbl_stu_award add constraint FK_Reference_14 foreign key (teac_id)
 alter table tbl_stu_award add constraint FK_Reference_17 foreign key (check_result_id)
       references check_result (check_result_id) on delete restrict on update restrict;
 
-alter table tbl_stu_course add constraint FK_Reference_5 foreign key (stu_id)
-      references tbl_student (stu_id) on delete restrict on update restrict;
-
 alter table tbl_student add constraint FK_Reference_3 foreign key (class_id)
       references tbl_class (class_id) on delete restrict on update restrict;
+
+alter table tbl_teac_award add constraint FK_Reference_16 foreign key (teac_id)
+      references tbl_teacher (teac_id) on delete restrict on update restrict;
+
+alter table tbl_teac_award add constraint FK_Reference_18 foreign key (award_id)
+      references tbl_award (award_id) on delete restrict on update restrict;
 
 alter table tbl_teacher add constraint FK_Reference_4 foreign key (college_id)
       references tbl_college (college_id) on delete restrict on update restrict;

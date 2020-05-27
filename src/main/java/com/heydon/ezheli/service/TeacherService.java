@@ -14,4 +14,12 @@ public interface TeacherService {
     ResultUtil changeAwardState(String token, Map<String, String> map);
 
     ResultUtil deleteAward(String token, Map<String, String> map);
+
+    ResultUtil getAllTeacs();
+
+    ResultUtil checkTeacs(Map<String, String> map);
+
+    ResultUtil addCheckTeac(Map<String, String> map);
+
+    ResultUtil deleteCheckTeac(Map<String, String> map);
 }

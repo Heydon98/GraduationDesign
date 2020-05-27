@@ -61,4 +61,25 @@ public class TeacherController {
         String token = request.getHeader("token");
         return teacherService.deleteAward(token, map);
     }
+
+    @RequestMapping(value = "getAllTeacs", method = RequestMethod.GET)
+    public ResultUtil getAllTeacs() {
+        return teacherService.getAllTeacs();
+    }
+
+    @RequestMapping(value = "checkTeacs", method = RequestMethod.POST)
+    public ResultUtil checkTeacs(@RequestParam Map<String, String> map) {
+        return teacherService.checkTeacs(map);
+    }
+
+    @RequestMapping(value = "addCheckTeac", method = RequestMethod.POST)
+    public ResultUtil addCheckTeac(@RequestParam Map<String, String> map) {
+        System.out.println("接到");
+        return teacherService.addCheckTeac(map);
+    }
+
+    @RequestMapping(value = "deleteCheckTeac", method = RequestMethod.POST)
+    public ResultUtil deleteCheckTeac(@RequestParam Map<String, String> map) {
+        return teacherService.deleteCheckTeac(map);
+    }
 }

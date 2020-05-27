@@ -1,6 +1,7 @@
 package com.heydon.ezheli.service;
 
 import com.heydon.ezheli.dao.TeacherDao;
+import com.heydon.ezheli.entity.AllTeacs;
 import com.heydon.ezheli.entity.Award;
 import com.heydon.ezheli.util.JwtUtil;
 import com.heydon.ezheli.util.ResultUtil;
@@ -97,6 +98,55 @@ public class TeacherImpl implements TeacherService{
             String awardId = map.get("awardId");
             teacherDao.deleteAward(awardId);
             teacherDao.deleteStuAward(awardId);
+            return new ResultUtil(RetCode.SUCCESS.getCode(), "success");
+        }catch (Exception e){
+            System.out.println(e);
+            return new ResultUtil(RetCode.FAIL.getCode(), "fail");
+        }
+    }
+
+    @Override
+    public ResultUtil getAllTeacs() {
+
+        List<AllTeacs> allTeacs = teacherDao.findTeachers();
+        Map data = new HashMap<>();
+        data.put("allTeacs", allTeacs);
+        return new ResultUtil(RetCode.SUCCESS.getCode(), "success", data);
+    }
+
+    @Override
+    public ResultUtil checkTeacs(Map<String, String> map) {
+        String awardId = map.get("awardId");
+        List<AllTeacs> checkTeacs = teacherDao.findCheckTeacsByAwardId(awardId);
+        Map data = new HashMap<>();
+        data.put("checkTeacs", checkTeacs);
+        return new ResultUtil(RetCode.SUCCESS.getCode(), "success", data);
+    }
+
+    @Override
+    public ResultUtil addCheckTeac(Map<String, String> map) {
+        try {
+            String teacId = map.get("teacId");
+            String awardId = map.get("awardId");
+            String teacName = teacherDao.findNameByTeacId(teacId);
+            String nameId = teacName + '(' + teacId + ')';
+            teacherDao.addCheckTeac(teacId, teacName, awardId);
+            Map data = new HashMap<>();
+            data.put("teadId", teacId);
+            data.put("nameId", nameId);
+            return new ResultUtil(RetCode.SUCCESS.getCode(), "success", data);
+        }catch (Exception e){
+            System.out.println(e);
+            return new ResultUtil(RetCode.FAIL.getCode(), "fail");
+        }
+    }
+
+    @Override
+    public ResultUtil deleteCheckTeac(Map<String, String> map) {
+        try {
+            String teacId = map.get("teacId");
+            String awardId = map.get("awardId");
+            teacherDao.deleteCheckTeac(teacId, awardId);
             return new ResultUtil(RetCode.SUCCESS.getCode(), "success");
         }catch (Exception e){
             System.out.println(e);

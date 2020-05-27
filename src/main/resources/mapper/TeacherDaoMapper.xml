@@ -55,4 +55,35 @@
         delete from tbl_stu_award where award_id = #{awardId};
     </delete>
 
+    <select id="findTeachers" resultType="AllTeacs">
+        select
+            teac_id as teacId,
+            concat(name, '(', teac_id, ')') as nameId
+        from tbl_teacher;
+    </select>
+
+    <select id="findCheckTeacsByAwardId" resultType="AllTeacs">
+        select
+            teac_id as teacId,
+            concat(name, '(', teac_id, ')') as nameId
+        from tbl_teac_award
+        where award_id = #{awardId};
+    </select>
+
+    <select id="findNameByTeacId" resultType="java.lang.String">
+        select
+            name
+        from tbl_teacher
+        where teac_id = #{teacId};
+    </select>
+
+    <insert id="addCheckTeac">
+        insert into tbl_teac_award(teac_id, name, award_id)
+        values (#{teacId}, #{teacName}, #{awardId});
+    </insert>
+
+    <delete id="deleteCheckTeac">
+        delete from tbl_teac_award where teac_id = #{teacId} and award_id = #{awardId}
+    </delete>
+
 </mapper>

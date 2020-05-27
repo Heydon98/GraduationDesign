@@ -1,5 +1,6 @@
 package com.heydon.ezheli.dao;
 
+import com.heydon.ezheli.entity.AllTeacs;
 import com.heydon.ezheli.entity.Award;
 import org.apache.ibatis.annotations.Param;
 
@@ -32,4 +33,16 @@ public interface TeacherDao {
     void deleteAward(@Param("awardId") String awardId);
 
     void deleteStuAward(@Param("awardId") String awardId);
+
+    List<AllTeacs> findTeachers();
+
+    List<AllTeacs> findCheckTeacsByAwardId(@Param("awardId") String awardId);
+
+    String findNameByTeacId(@Param("teacId") String teacId);
+
+    void addCheckTeac(@Param("teacId") String teacId,
+                      @Param("teacName") String teacName,
+                      @Param("awardId") String awardId);
+
+    void deleteCheckTeac(@Param("teacId") String teacId,@Param("awardId") String awardId);
 }

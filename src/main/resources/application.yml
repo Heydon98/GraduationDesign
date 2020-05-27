@@ -2,7 +2,7 @@ spring:
   devtools:
     restart:
       enabled: true #开启热部署
-      additional-paths: src/main/java/com/heydon/ezheli
+      additional-paths: src/main/java/com /heydon/ezheli
   freemarker:
     cache: false
   datasource:
