@@ -86,4 +86,101 @@
         delete from tbl_teac_award where teac_id = #{teacId} and award_id = #{awardId}
     </delete>
 
+    <select id="findAwardNameByBigType" resultType="Award">
+        SELECT
+            a.award_id as awardId,
+            b.award_total_name as awardName
+        from
+            tbl_teac_award as a,
+            tbl_award as b
+        where a.teac_id = #{teacId}
+        and a.award_id = b.award_id
+        and b.award_big_type_id = #{bigTypeId}
+        and (b.award_state_id = 2
+        or b.award_state_id = 3);
+    </select>
+
+    <select id="getNotCheckApplies" resultType="Apply">
+        SELECT a.stu_id as stuId,
+               a.stu_award_id as stuAwardId,
+               a.stu_name as stuName,
+               a.award_total_name as awardName,
+               a.reason as reason,
+               c.college_name as college,
+               d.class_name as clazz,
+               a.check_result_id as checkResult
+        FROM tbl_stu_award as a,
+             tbl_student as b,
+             tbl_college as c,
+             tbl_class as d
+        where a.stu_id = b.stu_id
+        and b.college_id = c.college_id
+        and b.class_id = d.class_id
+        and a.check_result_id is null
+        and a.award_id = #{awardId};
+    </select>
+
+    <select id="getCheckedApplies" resultType="Apply">
+        SELECT a.stu_id as stuId,
+               a.stu_award_id as stuAwardId,
+               a.stu_name as stuName,
+               a.award_total_name as awardName,
+               a.reason as reason,
+               c.college_name as college,
+               d.class_name as clazz,
+               a.check_result_id as checkResult
+        FROM tbl_stu_award as a,
+             tbl_student as b,
+             tbl_college as c,
+             tbl_class as d
+        where a.stu_id = b.stu_id
+        and b.college_id = c.college_id
+        and b.class_id = d.class_id
+        and a.check_result_id is not null
+        and a.award_id = #{awardId};
+    </select>
+
+    <update id="updateCheck">
+        update
+            tbl_stu_award
+        set check_result_id = #{checkResult},
+            teac_id = #{teacId},
+            teac_name = #{teacName},
+            check_time = #{checkTime}
+        where stu_award_id = #{stuAwardId}
+    </update>
+
+    <select id="getWinStudents" resultType="WinStudent">
+        select a.stu_id as stuId,
+               b.name as stuName,
+               c.college_name as college,
+               d.class_name as clazz
+        from tbl_stu_award as a,
+             tbl_student as b,
+             tbl_college as c,
+             tbl_class as d
+        where a.stu_id = b.stu_id
+        and b.college_id = c.college_id
+        and b.class_id = d.class_id
+        and a.check_result_id = 1
+        and a.award_id = #{awardId};
+    </select>
+
+    <select id="getWinStuNum" resultType="Statistics">
+        select count(b.stu_id) as value,
+               c.class_name as name
+        from tbl_student as a
+        right join
+            (select * from tbl_stu_award where award_id = #{awardId} and check_result_id = 1) as b
+        on a.stu_id = b.stu_id
+        left join tbl_class c on a.class_id = c.class_id
+        group by c.class_name;
+    </select>
+
+    <select id="getAwardNameByAwardId" resultType="java.lang.String">
+        select award_total_name
+        from tbl_award
+        where award_id = #{awardId};
+    </select>
+
 </mapper>

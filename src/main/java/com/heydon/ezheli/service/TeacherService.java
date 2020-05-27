@@ -22,4 +22,16 @@ public interface TeacherService {
     ResultUtil addCheckTeac(Map<String, String> map);
 
     ResultUtil deleteCheckTeac(Map<String, String> map);
+
+    ResultUtil myCheckAward(String token, Map<String, String> map);
+
+    ResultUtil queryApplies(Map<String, String> map);
+
+    ResultUtil checkApply(String token, Map<String, String> map);
+
+    ResultUtil winStudents(Map<String, String> map);
+
+    ResultUtil statistics(Map<String, String> map);
+
+    ResultUtil awardName(Map<String, String> map);
 }

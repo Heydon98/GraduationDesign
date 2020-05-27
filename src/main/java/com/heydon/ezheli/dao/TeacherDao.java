@@ -1,7 +1,6 @@
 package com.heydon.ezheli.dao;
 
-import com.heydon.ezheli.entity.AllTeacs;
-import com.heydon.ezheli.entity.Award;
+import com.heydon.ezheli.entity.*;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -45,4 +44,23 @@ public interface TeacherDao {
                       @Param("awardId") String awardId);
 
     void deleteCheckTeac(@Param("teacId") String teacId,@Param("awardId") String awardId);
+
+    List<Award> findAwardNameByBigType(@Param("teacId") String teacId,
+                                       @Param("bigTypeId") String bigTypeId);
+
+    List<Apply> getNotCheckApplies(@Param("awardId") String awardId);
+
+    List<Apply> getCheckedApplies(@Param("awardId") String awardId);
+
+    void updateCheck(@Param("stuAwardId") String stuAwardId,
+                     @Param("checkResult") String checkResult,
+                     @Param("teacId") String teacId,
+                     @Param("teacName") String teacName,
+                     @Param("checkTime") String checkTime);
+
+    List<WinStudent> getWinStudents(@Param("awardId") String awardId);
+
+    List<Statistics> getWinStuNum(@Param("awardId") String awardId);
+
+    String getAwardNameByAwardId(@Param("awardId") String awardId);
 }

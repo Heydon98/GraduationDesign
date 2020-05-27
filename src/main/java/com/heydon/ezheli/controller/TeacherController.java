@@ -74,7 +74,6 @@ public class TeacherController {
 
     @RequestMapping(value = "addCheckTeac", method = RequestMethod.POST)
     public ResultUtil addCheckTeac(@RequestParam Map<String, String> map) {
-        System.out.println("接到");
         return teacherService.addCheckTeac(map);
     }
 
@@ -82,4 +81,37 @@ public class TeacherController {
     public ResultUtil deleteCheckTeac(@RequestParam Map<String, String> map) {
         return teacherService.deleteCheckTeac(map);
     }
+
+    @RequestMapping(value = "myCheckAward", method = RequestMethod.POST)
+    public ResultUtil myCheckAward(HttpServletRequest request, @RequestParam Map<String, String> map) {
+        String token = request.getHeader("token");
+        return teacherService.myCheckAward(token, map);
+    }
+
+    @RequestMapping(value = "queryApplies", method = RequestMethod.POST)
+    public ResultUtil queryApplies(@RequestParam Map<String, String> map) {
+        return teacherService.queryApplies(map);
+    }
+
+    @RequestMapping(value = "checkApply", method = RequestMethod.POST)
+    public ResultUtil checkApply(HttpServletRequest request, @RequestParam Map<String, String> map) {
+        String token = request.getHeader("token");
+        return teacherService.checkApply(token, map);
+    }
+
+    @RequestMapping(value = "winStudents", method = RequestMethod.POST)
+    public ResultUtil winStudents(@RequestParam Map<String, String> map) {
+        return teacherService.winStudents(map);
+    }
+
+    @RequestMapping(value = "statistics", method = RequestMethod.POST)
+    public ResultUtil statistics(@RequestParam Map<String, String> map) {
+        return teacherService.statistics(map);
+    }
+
+    @RequestMapping(value = "awardName", method = RequestMethod.POST)
+    public ResultUtil awardName(@RequestParam Map<String, String> map) {
+        return teacherService.awardName(map);
+    }
+
 }

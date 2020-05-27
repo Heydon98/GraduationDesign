@@ -1,8 +1,7 @@
 package com.heydon.ezheli.service;
 
 import com.heydon.ezheli.dao.TeacherDao;
-import com.heydon.ezheli.entity.AllTeacs;
-import com.heydon.ezheli.entity.Award;
+import com.heydon.ezheli.entity.*;
 import com.heydon.ezheli.util.JwtUtil;
 import com.heydon.ezheli.util.ResultUtil;
 import com.heydon.ezheli.util.RetCode;
@@ -152,5 +151,74 @@ public class TeacherImpl implements TeacherService{
             System.out.println(e);
             return new ResultUtil(RetCode.FAIL.getCode(), "fail");
         }
+    }
+
+    @Override
+    public ResultUtil myCheckAward(String token, Map<String, String> map) {
+        String teacId = JwtUtil.getUsername(token);
+        String bigTypeId = map.get("bigTypeId");
+        List<Award> result = teacherDao.findAwardNameByBigType(teacId, bigTypeId);
+        Map<String, List<Award>> data = new HashMap<>();
+        data.put("awards", result);
+        return new ResultUtil(RetCode.SUCCESS.getCode(), "success", data);
+    }
+
+    @Override
+    public ResultUtil queryApplies(Map<String, String> map) {
+        String awardId = map.get("awardId");
+        String isChecked = map.get("isChecked");
+        List<Apply> result = null;
+        if (isChecked.equals("0")){
+            result = teacherDao.getNotCheckApplies(awardId);
+        } else {
+            result = teacherDao.getCheckedApplies(awardId);
+        }
+        Map<String, List<Apply>> data = new HashMap<>();
+        data.put("applies", result);
+        return new ResultUtil(RetCode.SUCCESS.getCode(), "success", data);
+    }
+
+    @Override
+    public ResultUtil checkApply(String token, Map<String, String> map) {
+        String teacId = JwtUtil.getUsername(token);
+        String teacName = JwtUtil.getRealName(token);
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String checkTime = dateFormat.format(new Date());
+        try {
+            for (Map.Entry<String, String> entry : map.entrySet()){
+                teacherDao.updateCheck(entry.getKey(), entry.getValue(), teacId, teacName, checkTime);
+            }
+            return new ResultUtil(RetCode.SUCCESS.getCode(), "success");
+        }catch (Exception e){
+            System.out.println(e);
+            return new ResultUtil(RetCode.FAIL.getCode(), "fail");
+        }
+    }
+
+    @Override
+    public ResultUtil winStudents(Map<String, String> map) {
+        String awardId = map.get("awardId");
+        List<WinStudent> result = teacherDao.getWinStudents(awardId);
+        Map<String, List<WinStudent>> data = new HashMap<>();
+        data.put("students", result);
+        return new ResultUtil(RetCode.SUCCESS.getCode(), "success", data);
+    }
+
+    @Override
+    public ResultUtil statistics(Map<String, String> map) {
+        String awardId = map.get("awardId");
+        List<Statistics> result = teacherDao.getWinStuNum(awardId);
+        Map<String, List<Statistics>> data = new HashMap<>();
+        data.put("statistics", result);
+        return new ResultUtil(RetCode.SUCCESS.getCode(), "success", data);
+    }
+
+    @Override
+    public ResultUtil awardName(Map<String, String> map) {
+        String awardId = map.get("awardId");
+        String awardName = teacherDao.getAwardNameByAwardId(awardId);
+        Map<String, String> data = new HashMap<>();
+        data.put("awardName", awardName);
+        return new ResultUtil(RetCode.SUCCESS.getCode(), "success", data);
     }
 }
