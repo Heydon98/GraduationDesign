@@ -2,6 +2,7 @@ package com.heydon.ezheli.dao;
 
 import com.heydon.ezheli.entity.ApplyingAwards;
 import com.heydon.ezheli.entity.OpenAwards;
+import com.heydon.ezheli.entity.PersonalInfo;
 import com.heydon.ezheli.entity.Student;
 import org.apache.ibatis.annotations.Param;
 
@@ -29,5 +30,12 @@ public interface StudentDao {
                        @Param("applyTime") String applyTime);
 
     List<ApplyingAwards> findApplyingAwardsByStuId(@Param("stuId") String stuId);
-    
+
+    PersonalInfo getPersonalInfo(@Param("stuId") String stuId);
+
+    void changeInfo(@Param("stuId") String stuId,
+                    @Param("wechat") String wechat,
+                    @Param("qq") String qq,
+                    @Param("tel") String tel,
+                    @Param("email") String email);
 }

@@ -53,11 +53,22 @@ public class StudentController {
         return studentService.applyAwards(token, map);
     }
 
+
     @RequestMapping(value = "applyingAwards", method = RequestMethod.GET)
     public ResultUtil applyingAwards(HttpServletRequest request) {
         String token = request.getHeader("token");
         return studentService.applyingAwards(token);
     }
 
+    @RequestMapping(value = "personalInfo", method = RequestMethod.GET)
+    public ResultUtil personalInfo(HttpServletRequest request) {
+        String token = request.getHeader("token");
+        return studentService.personalInfo(token);
+    }
 
+    @RequestMapping(value = "changeInfo", method = RequestMethod.GET)
+    public ResultUtil changeInfo(HttpServletRequest request, @RequestParam Map<String, String> map) {
+        String token = request.getHeader("token");
+        return studentService.changeInfo(token, map);
+    }
 }

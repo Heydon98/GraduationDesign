@@ -11,14 +11,15 @@ import lombok.experimental.Accessors;
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-public class ApplyingAwards {
-    private long stuId;
+public class PersonalInfo {
+    private String stuId;
     private String stuName;
-    private String awardName;
-    private String teacName;
-    private String reason;
-    private String checkResult;
-    private String checkTime;
-    private String applyTime;
-
+    private String college;
+    private String major;
+    private String classYear;
+    private String clazz;
+    private String wechat;
+    private String qq;
+    private String tel;
+    private String email;
 }

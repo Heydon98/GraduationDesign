@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     2020/5/26 0:14:42                            */
+/* Created on:     2020/5/28 6:01:19                            */
 /*==============================================================*/
 
 
@@ -53,6 +53,9 @@ alter table tbl_student
    drop primary key;
 
 drop table if exists tbl_student;
+
+alter table tbl_teac_award
+   drop primary key;
 
 drop table if exists tbl_teac_award;
 
@@ -204,7 +207,11 @@ create table tbl_student
    sex                  char(2),
    college_id           int,
    major_id             int,
-   class_id             int
+   class_id             int,
+   wechat               varchar(30),
+   qq                   varchar(12),
+   tel                  char(11),
+   email                varchar(50)
 );
 
 alter table tbl_student
@@ -215,10 +222,13 @@ alter table tbl_student
 /*==============================================================*/
 create table tbl_teac_award
 (
-   teac_id              bigint,
+   teac_id              bigint not null,
    name                 varchar(50),
-   award_id             int
+   award_id             int not null
 );
+
+alter table tbl_teac_award
+   add primary key (teac_id, award_id);
 
 /*==============================================================*/
 /* Table: tbl_teacher                                           */

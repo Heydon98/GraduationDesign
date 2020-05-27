@@ -56,7 +56,7 @@
                a.stu_name as stuName,
                a.award_total_name as awardName,
                a.apply_time as applyTime,
-               a.teac_name as teacTime,
+               a.teac_name as teacName,
                a.reason as reason,
                b.check_result_name as checkResult,
                a.check_time as checkTime
@@ -66,5 +66,37 @@
         where a.stu_id = #{stuId}
         order by a.apply_time desc
     </select>
+
+    <select id="getPersonalInfo" resultType="PersonalInfo">
+        select a.stu_id as stuId,
+               a.name as stuName,
+               c.college_name as college,
+               d.major_name as major,
+               b.class_year as classYear,
+               b.class_name as clazz,
+               a.wechat as wechat,
+               a.qq as qq,
+               a.tel as tel,
+               a.email as email
+        from tbl_student as a,
+             tbl_class as b,
+             tbl_college as c,
+             tbl_major as d
+        where a.class_id = b.class_id
+        and a.college_id = c.college_id
+        and a.major_id = d.major_id
+        and a.stu_id = #{stuId}
+    </select>
+
+    <update id="changeInfo">
+        update
+            tbl_student
+        set wechat = #{wechat},
+            qq = #{qq},
+            tel = #{tel},
+            email = #{email}
+        where
+            stu_id = #{stuId};
+    </update>
 
 </mapper>

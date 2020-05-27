@@ -12,4 +12,8 @@ public interface StudentService {
     ResultUtil applyAwards(String token, Map<String, String> map);
 
     ResultUtil applyingAwards(String token);
+
+    ResultUtil personalInfo(String token);
+
+    ResultUtil changeInfo(String token, Map<String, String> map);
 }

@@ -3,6 +3,7 @@ package com.heydon.ezheli.service;
 import com.heydon.ezheli.dao.StudentDao;
 import com.heydon.ezheli.entity.ApplyingAwards;
 import com.heydon.ezheli.entity.OpenAwards;
+import com.heydon.ezheli.entity.PersonalInfo;
 import com.heydon.ezheli.util.JwtUtil;
 import com.heydon.ezheli.util.ResultUtil;
 import com.heydon.ezheli.util.RetCode;
@@ -103,10 +104,35 @@ public class StudentImpl implements StudentService {
     @Override
     public ResultUtil applyingAwards(String token) {
         String stuId = JwtUtil.getUsername(token);
-        System.out.println(stuId);
         List<ApplyingAwards> applyRecord = studentDao.findApplyingAwardsByStuId(stuId);
         Map<String, List<ApplyingAwards>> data = new HashMap<>();
         data.put("applyRecord", applyRecord);
         return new ResultUtil(RetCode.SUCCESS.getCode(), "success", data);
+    }
+
+    @Override
+    public ResultUtil personalInfo(String token) {
+        String stuId = JwtUtil.getUsername(token);
+        PersonalInfo result = studentDao.getPersonalInfo(stuId);
+        Map<String, PersonalInfo> data = new HashMap<>();
+        data.put("personalInfo", result);
+        return new ResultUtil(RetCode.SUCCESS.getCode(), "success", data);
+    }
+
+    @Override
+    public ResultUtil changeInfo(String token, Map<String, String> map) {
+        String stuId = JwtUtil.getUsername(token);
+        String wechat = map.get("wechat");
+        String qq = map.get("qq");
+        String tel = map.get("tel");
+        String email = map.get("email");
+        try {
+            studentDao.changeInfo(stuId, wechat, qq, tel, email);
+            return new ResultUtil(RetCode.SUCCESS.getCode(), "success");
+
+        }catch (Exception e){
+            System.out.println(e);
+            return new ResultUtil(RetCode.FAIL.getCode(), "fail");
+        }
     }
 }
